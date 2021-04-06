@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <RootNamespace>DateTimeComponent</RootNamespace>
+    <Product>iMeter</Product>
+    <Authors>NTI</Authors>
+    <Company>NTI</Company>
+    <Copyright>Copyright © NTI 2021</Copyright>
+    <Description>NTI iMeter DateTime Component Runtime</Description>
+    <PackageId>NTI.iMeter.Standards.DateTimeComponent.Runtime</PackageId>
+    <Version>1.0.1</Version>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="NTI.iMeter.Standards.ComponentStandard" Version="1.0.4" />
+  </ItemGroup>
+
+</Project>

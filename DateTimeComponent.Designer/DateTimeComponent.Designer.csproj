@@ -1,0 +1,28 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <RootNamespace>DateTimeComponent</RootNamespace>
+    <Product>iMeter</Product>
+    <Authors>NTI</Authors>
+    <Company>NTI</Company>
+    <Copyright>Copyright © NTI 2021</Copyright>
+    <Description>NTI iMeter DateTime Component Designer</Description>
+    <PackageId>NTI.iMeter.Standards.DateTimeComponent.Designer</PackageId>
+    <Version>1.0.1</Version>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="NTI.iMeter.Standards.ComponentStandard" Version="1.0.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="UI\ConditionUI.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="UI\ProcessorAddTimePanel.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+  </ItemGroup>
+
+</Project>

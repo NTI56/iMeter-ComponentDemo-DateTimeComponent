@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31129.286
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DateTimeComponent.Runtime", "DateTimeComponent.Runtime\DateTimeComponent.Runtime.csproj", "{457B4420-B43F-45A6-846D-E666D07C33D2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DateTimeComponent.Designer", "DateTimeComponent.Designer\DateTimeComponent.Designer.csproj", "{CA2AE18B-2808-49A5-8F31-26C3C9AD3BAD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{457B4420-B43F-45A6-846D-E666D07C33D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{457B4420-B43F-45A6-846D-E666D07C33D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{457B4420-B43F-45A6-846D-E666D07C33D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{457B4420-B43F-45A6-846D-E666D07C33D2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CA2AE18B-2808-49A5-8F31-26C3C9AD3BAD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA2AE18B-2808-49A5-8F31-26C3C9AD3BAD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA2AE18B-2808-49A5-8F31-26C3C9AD3BAD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA2AE18B-2808-49A5-8F31-26C3C9AD3BAD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F2F245BC-9743-4753-8700-2DCEF66A54EA}
+	EndGlobalSection
+EndGlobal
