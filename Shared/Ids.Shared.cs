@@ -1,12 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace DateTimeComponent
 {
-    static class Ids
+    static partial class Ids
     {
         internal static Guid LibraryRuntime { get; } = new Guid("3AB65156-C754-4DDD-B87A-050FCF97CFCD");
 
@@ -27,14 +25,13 @@ namespace DateTimeComponent
         internal static Guid SctRuntime { get; } = new Guid("633785D1-A769-49A7-AFAD-C7AE5716DE43");
         internal static Guid SctTypeId { get; } = new Guid("02A04621-8EE6-4060-9CD7-D336652BE1E3");
 
-
         internal static Guid ProcessorCurrentTimeRuntime { get; } = new Guid("ea17ba80-d539-4b02-827e-76d1487755e8");
         internal static Guid ProcessorCurrentTimeOutput { get; } = new Guid("43bbacbc-d1b4-493d-aa0c-433ab76efad7");
-
 
         internal static Guid ProcessorAddTimeRuntime { get; } = new Guid("37513982-02d9-4352-8005-f25fc6bc05d1");
         internal static Guid ProcessorAddTimeInput { get; } = new Guid("8876cedf-b09d-4945-aa5f-355db5096d73");
         internal static Guid ProcessorAddTimeOutput { get; } = new Guid("211781f7-267c-4b04-99f1-ba599103520c");
         internal static Guid ProcessorAddTimeSetting { get; } = new Guid("1aec06a2-a4da-42c9-bdf0-8771c516c3d3");
+
     }
 }

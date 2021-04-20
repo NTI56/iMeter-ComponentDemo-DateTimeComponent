@@ -16,4 +16,6 @@
     <PackageReference Include="NTI.iMeter.Standards.ComponentStandard" Version="1.0.4" />
   </ItemGroup>
 
+  <Import Project="..\Shared\Shared.projitems" Label="Shared" />
+
 </Project>
