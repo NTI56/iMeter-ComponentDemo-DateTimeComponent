@@ -30,7 +30,7 @@ namespace DateTimeComponent.UI
 
         public override string Name => "DateTime fake device";
 
-        public override RuntimeTargetPoint RuntimeTargetPoint { get; } = new RuntimeTargetPoint(Ids.Library, Ids.DeviceRuntime, null);
+        public override RuntimeTargetPoint RuntimeTargetPoint { get; } = new RuntimeTargetPoint(Ids.LibraryRuntime, Ids.DeviceRuntime, null);
 
 
         public override IReadOnlyCollection<LibraryComponentId> SupersededComponentIds => null;
