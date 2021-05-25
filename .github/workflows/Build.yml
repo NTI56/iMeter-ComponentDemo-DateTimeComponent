@@ -1,0 +1,68 @@
+name: Build to Release
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    types: [opened, synchronize, reopened, closed]
+    branches:
+      - main
+
+jobs:
+  Build:
+    runs-on: windows-latest
+    name: Build to Release
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+      with:
+        path: 'Current'
+    - name: Checkout CompiledLibs
+      uses: actions/checkout@v2
+      with:
+        repository: NTI56/iMeter-CompiledLibs
+        token: ${{ secrets.ALLENGITHUBTOKEN }}
+        path: 'iMeter-CompiledLibs'
+    - name: Checkout Release
+      uses: actions/checkout@v2
+      with:
+        repository: NTI56/iMeter-Release
+        persist-credentials: false
+        fetch-depth: 0
+        token: ${{ secrets.ALLENGITHUBTOKEN }}
+        path: 'Release'
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 5.0.x
+    - name: Restore dependencies
+      run: |
+        dotnet restore Current\DateTimeComponent.Runtime
+        dotnet restore Current\DateTimeComponent.Designer
+    - name: Publish
+      run: |
+        dotnet publish Current\DateTimeComponent.Runtime -c Release -o Publish\Runtime
+        dotnet publish Current\DateTimeComponent.Designer -c Release -o Publish\Designer
+    - name: Clean
+      run: |
+        Remove-Item Release\Components\DateTimeComponent -Recurse -ErrorAction Ignore
+        [System.IO.Directory]::CreateDirectory("Release\Components\DateTimeComponent")
+    - name: Copy
+      run: |
+        echo .pdb >Exclude.txt
+        xcopy /e /i Publish Release\Components\DateTimeComponent /Exclude:Exclude.txt
+    - name: Commit
+      run: |
+        cd Release
+        git config --local user.email "github-action[bot]@users.noreply.github.com"
+        git config --local user.name "github-action[bot]"
+        git add -A .
+        git diff-index --quiet HEAD || git commit -m "Update Release" -a
+        cd ..
+    - name: Push Release
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.ALLENGITHUBTOKEN }}
+        directory: 'Release'
+        repository: 'NTI56/iMeter-Release'

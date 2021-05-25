@@ -1,6 +1,7 @@
 ﻿using NTI.iMeter.ComponentStandard.UI.StrongCustomizedType;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,9 +23,9 @@ namespace DateTimeComponent.UI
 
 		public override string Description => "A demo strong customized type contains only a DateTime with property Second.";
 
-        public override IReadOnlyCollection<string> ExtraRuntimeFiles => null;
+        public override IReadOnlyCollection<string> ExtraRuntimeFiles => new Collection<string> {"DateTimeComponent.Runtime.deps.json"};
 
-        public override IReadOnlyCollection<string> ExtraUIFiles => null;
+        public override IReadOnlyCollection<string> ExtraUIFiles => new Collection<string> {"DateTimeComponent.Designer.deps.json"};
 
         public override Guid Id => Ids.SctUI;
 
