@@ -24,14 +24,6 @@ jobs:
         repository: NTI56/iMeter-CompiledLibs
         token: ${{ secrets.ALLENGITHUBTOKEN }}
         path: 'iMeter-CompiledLibs'
-    - name: Checkout Release
-      uses: actions/checkout@v2
-      with:
-        repository: NTI56/iMeter-Release
-        persist-credentials: false
-        fetch-depth: 0
-        token: ${{ secrets.ALLENGITHUBTOKEN }}
-        path: 'Release'
     - name: Setup .NET
       uses: actions/setup-dotnet@v1
       with:
@@ -44,6 +36,14 @@ jobs:
       run: |
         dotnet publish Current\DateTimeComponent.Runtime -c Release -o Publish\Runtime
         dotnet publish Current\DateTimeComponent.Designer -c Release -o Publish\Designer
+    - name: Checkout Release
+      uses: actions/checkout@v2
+      with:
+        repository: NTI56/iMeter-Release
+        persist-credentials: false
+        fetch-depth: 0
+        token: ${{ secrets.ALLENGITHUBTOKEN }}
+        path: 'Release'
     - name: Clean
       run: |
         Remove-Item Release\Components\DateTimeComponent -Recurse -ErrorAction Ignore
